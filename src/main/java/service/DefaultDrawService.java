@@ -15,7 +15,7 @@ public class DefaultDrawService implements DrawService {
         return switch (first.getHandRanking()) {
             case HIGHCARD, FLUSH, STRAIGHT, STRAIGHTFLUSH -> hasFirstPlayerHighestCard(first, second);
             case ONEPAIR, TWOPAIRS -> hasFirstPlayerWinningPairs(first, second);
-            case THREEOFAKIND -> hasFirstPlayerWinning3or4Kind(first, second);
+            case THREEOFAKIND, FOUROFAKIND, FULLHOUSE -> hasFirstPlayerWinning3or4Kind(first, second);
             default -> throw new IllegalArgumentException("Unsupported value");
         };
     }
