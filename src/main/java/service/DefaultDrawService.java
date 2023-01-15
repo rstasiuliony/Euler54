@@ -23,8 +23,13 @@ public class DefaultDrawService implements DrawService {
     private boolean hasFirstPlayerHighestCard(Hand first, Hand second) {
         List<Card> firstSortedCards = HandAnalyzer.sortByValue(first.getPlayersCards());
         List<Card> secondSortedCards = HandAnalyzer.sortByValue(second.getPlayersCards());
-        return firstSortedCards.get(firstSortedCards.size()-1).getValue().getValueWeight()
-                > secondSortedCards.get(secondSortedCards.size()-1).getValue().getValueWeight();
+        for (int i = firstSortedCards.size()-1; i > 0; i--) {
+            if (firstSortedCards.get(i).getValue() != secondSortedCards.get(i).getValue()) {
+                return firstSortedCards.get(i).getValue().getValueWeight()
+                        > secondSortedCards.get(i).getValue().getValueWeight();
+            }
+        }
+        return false;
     }
 
     private boolean hasFirstPlayerWinningPairs(Hand first, Hand second) {
