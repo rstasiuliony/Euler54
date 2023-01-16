@@ -13,8 +13,9 @@ import service.Dealer;
 public class Main {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
-    static int firstPlayerWinnerCounter = 0;
-    static String line;
+    private static final String FILE_NAME = "poker.txt";
+    private static int firstPlayerWinnerCounter = 0;
+    private static String line;
 
     public static void main(String[] args) {
 
@@ -24,7 +25,7 @@ public class Main {
         try {
             ClassLoader classLoader = Main.class.getClassLoader();
             BufferedReader br = new BufferedReader(new FileReader(
-                    Objects.requireNonNull(classLoader.getResource("poker.txt")).getFile()));
+                    Objects.requireNonNull(classLoader.getResource(FILE_NAME)).getFile()));
             while ((line = br.readLine()) != null) {
                 dealer.startGame(prepareCards());
                 if (dealer.isFirstPlayerWinner()) {

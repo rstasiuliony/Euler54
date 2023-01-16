@@ -1,20 +1,20 @@
 package service;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
 import domain.Card;
 import domain.Hand;
 import domain.enums.Value;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TestDefaultDrawService {
 
     private DrawService target;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         target = new DefaultDrawService();
     }

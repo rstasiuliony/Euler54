@@ -1,15 +1,15 @@
 package service;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import domain.Card;
 import domain.Hand;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TestHandAnalyzer {
 
@@ -30,7 +30,7 @@ public class TestHandAnalyzer {
     private Hand handTwoPairs;
     private Hand handOnePair;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         createCardsAndHands();
         handRoyalFlush = new Hand(royalFlush);
