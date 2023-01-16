@@ -1,3 +1,5 @@
+The project can be run in IDE (I used IntelliJ) with JDK17.
+
 This is the solution for the Euler54 problem. The program reads card strings from the file poker.txt and counts how many times player 1 has won.
 
 In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
